@@ -32,7 +32,7 @@ public class AuthenticationController {
         Authentication authentication = authenticationManager.authenticate(
             new UsernamePasswordAuthenticationToken(userRequest.getUsername(), userRequest.getPassword())
         );
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+//        SecurityContextHolder.getContext().setAuthentication(authentication);
         UserEntity user = (UserEntity) authentication.getPrincipal();
         String jwtToken = jwtProvider.generateToken(authentication);
 
